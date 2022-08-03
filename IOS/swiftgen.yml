@@ -1,0 +1,11 @@
+strings:
+  inputs: ApplicantsIKTIB/Resources
+  outputs:
+    - templateName: structured-swift5
+      output: ApplicantsIKTIB/Resources/SwiftGen/Strings.swift
+xcassets:
+  inputs:
+    - ApplicantsIKTIB/Resources/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: ApplicantsIKTIB/Resources/SwiftGen/Assets.swift

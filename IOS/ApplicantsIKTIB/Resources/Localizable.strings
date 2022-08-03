@@ -1,0 +1,63 @@
+
+// Authorization.swift
+"authorizationTitle" = "Авторизация";
+"authorizationTextButton" = "Войти в профиль";
+"registrationTextButton" = "Регистрация";
+"enterGuest" = "Войти как гость";
+"politicalInfo" = "Продолжая пользоваться приложением,\n Вы соглашаетесь с Политикой конфиденциальности и даете согласие на Обработку Ваших Данных.";
+
+// RegistrationView.swift
+"infoTextNumberPhone" = "Укажите ваш номер телефона";
+"infoTextCode" = "После ввода номера телефона,\nвам придет одноразовый код.";
+"infoTextField" = "ВАШ НОМЕР ТЕЛЕФОНА";
+"errorText" = "Проверьте правильность указанного номера";
+"textRegistrationButton" = "Зарегистрироваться";
+
+// RegistrationViewForEnterToProfile.swift
+"textAuthorizationButton" = "Продолжить";
+
+
+// CodeView.swift
+"enterCode" = "Введите одноразовый код";
+"textPart1" = "На номер ";
+"textPart2" = "был отправлен код для входа в приложение";
+"infoCodeTextField" = "Ваш код";
+"codeNotRecived" = "Не получили код? Помощь";
+"textCodeButton" = "Продолжить";
+"repeatCodeButton" = "Отправить код повторно";
+"codeRepeatSend" = "Код отправлен повторно ";
+
+// AdditionalRegistrationView.swift
+"additionalTitle1" = "Добавьте информацию";
+"additionalTitle2" = "про абитуриента";
+"lastNameTextField" = "Фамилия";
+"nameTextField" = "Имя";
+"middleNameTextField" = "Отчество";
+"birthdayTextField" = "Дата рождения";
+"cityTextField" = "Город";
+"schoolTextField" = "Школа";
+"additionalTextButton" = "Согласиться и продолжить";
+
+// SuccessRegistration.swift
+"succesRegistrationTitle" = "Ура!\nРегистрация прошла\nуспешно.";
+"succesRegistrationButton" = "Класс";
+
+// EventsView.swift
+"eventsTitle"= "События";
+"eventsNavigationAll"="Все";
+"eventsNavigationRecerved"="Я иду";
+"eventsNewsTitle" = "Ближайшие";
+"eventPostTitle" = "Детали";
+"eventsDescription" = "Описание:";
+"eventsButton" = "Я пойду";
+
+// ProfileView.swift
+"profileTitle" = "Профиль";
+"profileName" = "Скиба Анна Александровна";
+"profileCount" = "3 балла";
+"profeilePersonData" = "Персональные данные";
+"profileEventVisit" = "Посещенные мероприятия";
+"profileOrder" = "Мои заказы";
+"profileAboutUs" = "О нас";
+"profileHelp" = "Связаться с поддержкой";
+"profileExit" = "Выход";
