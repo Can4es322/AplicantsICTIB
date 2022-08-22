@@ -1,26 +1,23 @@
 import SwiftUI
 
 struct SelectorView: View {
-  @State var tempIndex = 0
+  @Binding var selectedIndex: Int
+  @Binding var isAuthorization: Int
+
   var body: some View {
-    NavigationView {
-      VStack {
-        TabSelector(selectedIndex: $tempIndex)
-        if tempIndex == 0 {
-          EventsView()
-        } else {
-          RecordedEventsView()
-        }
+    VStack {
+      TabSelector(selectedIndex: $selectedIndex)
+      if selectedIndex == 0 {
+        EventsView(isAuthorization: $isAuthorization)
+      } else {
+        RecordedEventsView(isAuthorization: $isAuthorization)
       }
-      .navigationBarTitle("")
-      .navigationBarHidden(true)
-      .navigationBarBackButtonHidden(true)
     }
   }
-}
 
-struct SelectorView_Previews: PreviewProvider {
-  static var previews: some View {
-    SelectorView()
-  }
 }
+//struct SelectorView_Previews: PreviewProvider {
+//  static var previews: some View {
+//    SelectorView()
+//  }
+//}

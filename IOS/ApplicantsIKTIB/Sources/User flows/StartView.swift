@@ -1,19 +1,27 @@
 import SwiftUI
 
 struct StartView: View {
-  @State var isAuthorization = false
+  @ObservedObject var loginData = LoginViewModel()
 
-    var body: some View {
-      if isAuthorization {
-        MainEventsView()
-      } else {
-        Authorization(isAuthorization: $isAuthorization)
+  var body: some View {
+    VStack {
+      switch loginData.isAuthorization {
+      case 2:
+        MainEventsView(isAuthorization: $loginData.isAuthorization)
+      case 3:
+        MainGuestView(isAuthorization: $loginData.isAuthorization)
+      default:
+        Authorization(isAuthorization: $loginData.isAuthorization)
       }
     }
+    .task {
+      loginData.checkLogin()
+    }
+  }
 }
 
 struct StartView_Previews: PreviewProvider {
-    static var previews: some View {
-        StartView()
-    }
+  static var previews: some View {
+    StartView()
+  }
 }

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct Authorization: View {
-  @Binding var isAuthorization: Bool
+  @Binding var isAuthorization: Int
 
     var body: some View {
         NavigationView {
@@ -14,14 +14,14 @@ struct Authorization: View {
                     .padding(.top, 60)
 
                 VStack(alignment: .center, spacing: 20) {
-                    NavigationLink(destination: RegistrationViewForEnterToProfile() ) {
+                    NavigationLink(destination: RegistrationViewForEnterToProfile(isAuthorization: $isAuthorization) ) {
                         TextButton(placeHolderText: L10n.authorizationTextButton)
                             .foregroundColor(.white)
                             .background(Color(Asset.blue2.name))
                     }
                     .padding(.horizontal, 16)
 
-                    NavigationLink(destination: RegistrationView() ) {
+                    NavigationLink(destination: RegistrationView(isAuthorization: $isAuthorization) ) {
                         TextButton(placeHolderText: L10n.registrationTextButton)
                             .foregroundColor(.black)
                             .background(Color(Asset.gray4.name))
@@ -40,16 +40,8 @@ struct Authorization: View {
                   .padding(.horizontal, 16)
                   .padding(.top, 20)
                   .onTapGesture {
-                    isAuthorization = true
+                    isAuthorization = 3
                   }
-
-//                NavigationLink(destination: MainEventsView() ) {
-//                    TextButton(placeHolderText: L10n.enterGuest)
-//                        .foregroundColor(.black)
-//                        .background(Color(Asset.gray4.name))
-//                }
-//                .padding(.horizontal, 16)
-//                .padding(.top, 20)
 
                 Text(L10n.politicalInfo)
                     .frame(maxWidth: .infinity, alignment: .center)

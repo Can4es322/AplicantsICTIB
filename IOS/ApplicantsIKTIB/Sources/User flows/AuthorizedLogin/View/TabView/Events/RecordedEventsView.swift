@@ -1,28 +1,34 @@
 import SwiftUI
 
 struct RecordedEventsView: View {
+  @ObservedObject var server = ViewController()
+  @Binding var isAuthorization: Int
+
     var body: some View {
       VStack {
         ScrollView(.vertical, showsIndicators: false) {
           VStack {
-            ForEach(commonEvents) {post in
-              CommonEvents(
-                placeHolderImage: URL(string: post.image)!,
-                placeHolderTitle: post.title,
-                placeHolderDate: post.date,
-                placeHolderPlace: post.place,
-                placeHolderTag: post.tag,
-                placeHolderMoney: post.money)
+            ForEach(server.recordedEvents?.data ?? recordedEvent) {post in
+              CommonEvents(placeHolderEventData: post, isAuthorization: $isAuthorization)
             }
           }
           .padding(.leading, 13)
         }
       }
+      .navigationBarTitle("")
+      .navigationBarHidden(true)
+      .navigationBarBackButtonHidden(true)
+      .task {
+        Task {
+          try await server.sendRecordedEvents()
+        }
+      }
+
     }
 }
 
-struct RecordedEvents_Previews: PreviewProvider {
-    static var previews: some View {
-        RecordedEventsView()
-    }
-}
+//struct RecordedEvents_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RecordedEventsView()
+//    }
+//}

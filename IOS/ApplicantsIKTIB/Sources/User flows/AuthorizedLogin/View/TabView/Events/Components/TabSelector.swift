@@ -4,6 +4,7 @@ struct TabSelector: View {
   @Binding var selectedIndex: Int
   @State private var underlineWidths: [CGFloat] = []
   let titles = [L10n.eventsNavigationAll, L10n.eventsNavigationRecerved]
+
   var body: some View {
     VStack(alignment: .center, spacing: 2) {
       Text(L10n.eventsTitle)

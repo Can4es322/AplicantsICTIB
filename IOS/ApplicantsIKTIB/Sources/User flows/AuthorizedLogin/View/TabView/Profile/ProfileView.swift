@@ -4,6 +4,9 @@ struct ProfileView: View {
   let insetProfile = EdgeInsets(top: 0, leading: 13, bottom: 0, trailing: 71)
   let insetExit = EdgeInsets(top: 0, leading: 20, bottom: 31, trailing: 0)
   let insetCardButtons = EdgeInsets(top: 27, leading: 17, bottom: 0, trailing: 17)
+  @ObservedObject var loginData = LoginViewModel()
+  @StateObject var server = ViewController()
+  @Binding var isAuthorization: Int
 
   var body: some View {
     VStack {
@@ -12,14 +15,31 @@ struct ProfileView: View {
         .padding(.bottom, 31)
 
       HStack(spacing: 25) {
-        Image(Asset.avatar.name)
+        AsyncImage(url: URL(string: server.profileData?.image ?? Asset.avatar.name)) { image in
+          image
+            .resizable()
+            .scaledToFill()
+            .frame(maxWidth: 95, maxHeight: 95, alignment: .center)
+            .cornerRadius(8)
+
+        }placeholder: {
+          ProgressView()
+            .frame(maxWidth: 95, maxHeight: 95, alignment: .center)
+        }
+
 
         VStack(alignment: .leading, spacing: 12) {
-          Text(L10n.profileName)
+          Text(server.lastName)
+            .font(.system(size: 20, weight: .bold)) +
+          Text(" ") +
+          Text(server.firstName)
+            .font(.system(size: 20, weight: .bold)) +
+          Text(" ") +
+          Text(server.middleName)
             .font(.system(size: 20, weight: .bold))
 
           HStack(alignment: .center, spacing: 3) {
-            Text(L10n.profileCount)
+            Text("\(server.profileData?.bonuses ?? 3)")
               .font(.system(size: 14, weight: .regular))
               .foregroundColor(.white)
 
@@ -31,18 +51,19 @@ struct ProfileView: View {
           .cornerRadius(5)
         }
       }
+
       .padding(insetProfile)
 
       VStack(alignment: .leading, spacing: 20) {
 
-        NavigationLink(destination: EmptyView()) {
+        NavigationLink(destination: PersonDataView(placeHolderProfileData: server.profileData ?? profile)) {
           ProfileButton(
             placeHolderImage: Asset.person.name,
             placeHolderText: L10n.profeilePersonData)
           .padding(.top, 31)
         }
 
-        NavigationLink(destination: EmptyView()) {
+        NavigationLink(destination: ProfileEventsEttendView(isAuthorization: $isAuthorization)) {
           ProfileButton(
             placeHolderImage: Asset.desk.name,
             placeHolderText: L10n.profileEventVisit)
@@ -66,12 +87,16 @@ struct ProfileView: View {
             placeHolderText: L10n.profileHelp)
         }
 
-        NavigationLink(destination: EmptyView()) {
-          Text(L10n.profileExit)
-            .foregroundColor(Color(Asset.red.name))
-            .font(.system(size: 15, weight: .regular))
-            .padding(insetExit)
-        }
+        Text(L10n.profileExit)
+          .foregroundColor(Color(Asset.red.name))
+          .font(.system(size: 15, weight: .regular))
+          .padding(insetExit)
+          .onTapGesture {
+            loginData.firebaseAuth.signOutPerson()
+            loginData.isSuccessEnter = false
+            isAuthorization = 1
+          }
+
       }
       .frame(maxWidth: .infinity, alignment: .leading)
       .background(.white)
@@ -79,12 +104,20 @@ struct ProfileView: View {
 
       Spacer()
     }
+    .task {
+      Task {
+        try await server.sendDataProfile()
+      }
+    }
+    .navigationBarTitle("")
+    .navigationBarHidden(true)
+    .navigationBarBackButtonHidden(true)
     .background(Color(Asset.gray6.name))
   }
 }
 
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
-    }
-}
+//struct ProfileView_Previews: PreviewProvider {
+//  static var previews: some View {
+//    ProfileView()
+//  }
+//}

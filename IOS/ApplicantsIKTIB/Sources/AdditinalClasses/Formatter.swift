@@ -53,7 +53,7 @@ class BirthdayFormatter: Formatter {
 
         guard let number = mac?.filter("0123456789".contains) else { return nil }
 
-        let mask = "##.##.####"
+        let mask = "####-##-##"
         var result = ""
         var index = number.startIndex
         for character in mask where index < number.endIndex {

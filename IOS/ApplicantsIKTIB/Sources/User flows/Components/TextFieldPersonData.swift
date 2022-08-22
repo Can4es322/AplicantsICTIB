@@ -18,11 +18,11 @@ struct TextFieldPersonData: View {
                     value: placeHolderBinding,
                     formatter: BirthdayFormatter()
                 )
-                .foregroundColor(Color(Asset.gray3.name))
+                .foregroundColor(Color(Asset.black1.name))
                 .frame(maxWidth: .infinity)
             } else {
                 TextField("", text: placeHolderBinding)
-                    .foregroundColor(Color(Asset.gray3.name))
+                    .foregroundColor(Color(Asset.black1.name))
                     .frame(maxWidth: .infinity)
             }
 

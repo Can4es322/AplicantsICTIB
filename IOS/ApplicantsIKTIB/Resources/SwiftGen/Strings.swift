@@ -10,6 +10,8 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// О ВУЗе
+  internal static let aboutUniversite = L10n.tr("Localizable", "aboutUniversite")
   /// Согласиться и продолжить
   internal static let additionalTextButton = L10n.tr("Localizable", "additionalTextButton")
   /// Добавьте информацию
@@ -48,6 +50,8 @@ internal enum L10n {
   internal static let eventsNewsTitle = L10n.tr("Localizable", "eventsNewsTitle")
   /// События
   internal static let eventsTitle = L10n.tr("Localizable", "eventsTitle")
+  /// Неверный код
+  internal static let failCode = L10n.tr("Localizable", "failCode")
   /// Ваш код
   internal static let infoCodeTextField = L10n.tr("Localizable", "infoCodeTextField")
   /// После ввода номера телефона,
@@ -61,6 +65,8 @@ internal enum L10n {
   internal static let lastNameTextField = L10n.tr("Localizable", "lastNameTextField")
   /// Отчество
   internal static let middleNameTextField = L10n.tr("Localizable", "middleNameTextField")
+  /// Хакатон — форум для разработчиков, во время которого специалисты из разных областей разработки программного обеспечения сообща решают какую-либо проблему на время. Хакатон — форум для разработчиков, во время которого специалисты из разных областей разработки программного обеспечения сообща решают какую-либо проблему на время.
+  internal static let moreText = L10n.tr("Localizable", "moreText")
   /// Имя
   internal static let nameTextField = L10n.tr("Localizable", "nameTextField")
   /// Продолжая пользоваться приложением,
@@ -82,6 +88,8 @@ internal enum L10n {
   internal static let profileName = L10n.tr("Localizable", "profileName")
   /// Мои заказы
   internal static let profileOrder = L10n.tr("Localizable", "profileOrder")
+  /// Сохранить
+  internal static let profileSave = L10n.tr("Localizable", "profileSave")
   /// Профиль
   internal static let profileTitle = L10n.tr("Localizable", "profileTitle")
   /// Регистрация
@@ -96,6 +104,10 @@ internal enum L10n {
   /// Регистрация прошла
   /// успешно.
   internal static let succesRegistrationTitle = L10n.tr("Localizable", "succesRegistrationTitle")
+  /// События
+  internal static let tabNameEvent = L10n.tr("Localizable", "tabNameEvent")
+  /// Профиль
+  internal static let tabNameProfile = L10n.tr("Localizable", "tabNameProfile")
   /// Продолжить
   internal static let textAuthorizationButton = L10n.tr("Localizable", "textAuthorizationButton")
   /// Продолжить
