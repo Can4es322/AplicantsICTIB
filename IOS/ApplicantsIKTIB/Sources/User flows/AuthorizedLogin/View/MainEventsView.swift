@@ -10,10 +10,11 @@ struct MainEventsView: View {
   var body: some View {
     NavigationView {
       ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
+
         TabView(selection: $selectedTab) {
-          
           SelectorView(selectedIndex: $tempIndex, isAuthorization: $isAuthorization)
             .tag(0)
+
 
           ProfileView(isAuthorization: $isAuthorization)
             .tag(1)
@@ -32,8 +33,8 @@ struct MainEventsView: View {
                 .font(.system(size: 10, weight: .regular))
             }
             .foregroundColor(selectedTab == 0 ?
-                               Color(Asset.blue1.name) :
-                                      Color(Asset.gray1.name))
+                             Color(Asset.blue1.name) :
+                              Color(Asset.gray1.name))
           }
 
           Spacer()
@@ -49,8 +50,8 @@ struct MainEventsView: View {
                 .font(.system(size: 10, weight: .regular))
             }
             .foregroundColor(selectedTab == 1 ?
-                               Color(Asset.blue1.name) :
-                                      Color(Asset.gray1.name))
+                             Color(Asset.blue1.name) :
+                              Color(Asset.gray1.name))
           }
           Spacer()
         }

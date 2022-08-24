@@ -6,6 +6,7 @@ struct EventPostView: View {
   @ObservedObject var server = ViewController()
   @StateObject var eventsData = EventsViewModel()
   @Binding var isAuthorization: Int
+  @Environment (\.dismiss) var dismiss
 
   var body: some View {
     ScrollView(.vertical, showsIndicators: false) {
@@ -72,15 +73,17 @@ struct EventPostView: View {
             .font(.system(size: 12, weight: .regular))
         }
 
-        Text(L10n.eventsDescription)
-          .font(.system(size: 14, weight: .regular))
-          .foregroundColor(.black)
-          .padding(.top, 15)
+        if eventsData.isSignUpEvent != 5 {
+          Text(L10n.eventsDescription)
+            .font(.system(size: 14, weight: .regular))
+            .foregroundColor(.black)
+            .padding(.top, 15)
 
-        Text(placeHolderEventData.description)
-          .font(.system(size: 14, weight: .regular))
-          .foregroundColor(.black)
-          .padding(.top, 6)
+          Text(placeHolderEventData.description)
+            .font(.system(size: 14, weight: .regular))
+            .foregroundColor(.black)
+            .padding(.top, 6)
+        }
 
         switch eventsData.isSignUpEvent {
         case 2:
@@ -155,12 +158,26 @@ struct EventPostView: View {
 
         case 4:
           Text("")
-
         case 5:
-          Text("Вы отмечены на мероприятии!")
-            .font(.system(size: 14, weight: .bold))
-            .padding(.top, 20)
+          VStack {
+            Image(Asset.bottomSheet.name)
 
+            Text("Вы отмечены на мероприятии!")
+              .font(.system(size: 22, weight: .regular))
+
+            Button {
+              self.dismiss()
+            } label: {
+              Text("Класс")
+                .font(.system(size: 16, weight: .regular))
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .frame(height: 44)
+                .padding(.horizontal, 15)
+                .background(Color(Asset.blue2.name))
+                .padding(.top, 40)
+            }
+          }
         case 6:
           Button {
             isAuthorization = 1
@@ -209,3 +226,40 @@ struct EventPostView: View {
     }
   }
 }
+
+//extension View {
+//  func halfSheet<SheetView: View>(showSheet: Binding<Bool>, @ViewBuilder
+//                                  sheetView: @escaping () -> SheetView) -> some View {
+//    return self
+//      .background( HalfSheetHelper(sheetView: sheetView(), isShowing: showSheet))
+//  }
+//}
+//
+//struct HalfSheetHelper<SheetView: View>: UIViewControllerRepresentable {
+//  var sheetView: SheetView
+//  @Binding var isShowing: Bool
+//  let controller = UIViewController()
+//
+//  func makeUIViewController(context: Context) -> UIViewController {
+//    controller.view.backgroundColor = .clear
+//
+//    return controller
+//  }
+//  func updateUIViewController(_ uiViewController: UIViewController,
+//                              context: Context) {
+//    if isShowing {
+//      let sheetController = CustomHostingController(rootView: sheetView)
+//
+//      uiViewController.present(sheetController, animated: true)
+//    }
+//  }
+//}
+//
+//class CustomHostingController<Content: View>: UIHostingController<Content> {
+//  override func viewDidLoad() {
+//    if let presentationController = presentationController as?
+//        UISheetPresentationController {
+//      presentationController.detents = [.medium()]
+//    }
+//  }
+//}

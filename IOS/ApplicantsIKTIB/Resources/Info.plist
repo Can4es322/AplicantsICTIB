@@ -18,10 +18,6 @@
 	<dict>
 		<key>UIColorName</key>
 		<string>bg</string>
-		<key>UIImageName</key>
-		<string>logo2</string>
-		<key>UILaunchScreen</key>
-		<dict/>
 	</dict>
 </dict>
 </plist>

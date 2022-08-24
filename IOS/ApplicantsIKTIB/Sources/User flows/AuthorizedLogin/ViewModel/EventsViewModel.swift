@@ -15,6 +15,7 @@ class EventsViewModel: ObservableObject {
   @Published var isSignUpEvent = 1
   @Published var showingAlert = false
   @Published var createdAt: String?
+  @Published var isShowingBottomSheet = false
 
   func checkLongDate(startDate: Date, endDate: Date) {
 

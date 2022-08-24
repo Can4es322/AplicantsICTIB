@@ -5,13 +5,17 @@ struct StartView: View {
 
   var body: some View {
     VStack {
-      switch loginData.isAuthorization {
-      case 2:
-        MainEventsView(isAuthorization: $loginData.isAuthorization)
-      case 3:
-        MainGuestView(isAuthorization: $loginData.isAuthorization)
-      default:
-        Authorization(isAuthorization: $loginData.isAuthorization)
+      if loginData.firstEntry {
+        OnboardingPage1View(isAuthorization: $loginData.isAuthorization, firstEntry: $loginData.firstEntry)
+      } else {
+        switch loginData.isAuthorization {
+        case 2:
+          MainEventsView(isAuthorization: $loginData.isAuthorization)
+        case 3:
+          MainGuestView(isAuthorization: $loginData.isAuthorization)
+        default:
+          Authorization(isAuthorization: $loginData.isAuthorization)
+        }
       }
     }
     .task {

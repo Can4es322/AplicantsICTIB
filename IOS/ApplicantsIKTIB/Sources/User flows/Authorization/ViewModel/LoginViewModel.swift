@@ -4,7 +4,8 @@ import Combine
 class LoginViewModel: ObservableObject {
 
   init() {
-      self.isSuccessEnter = UserDefaults.standard.object(forKey: "isSuccessEnter") as? Bool ?? false
+    self.isSuccessEnter = UserDefaults.standard.object(forKey: "isSuccessEnter") as? Bool ?? false
+    self.firstEntry = UserDefaults.standard.object(forKey: "firstEntry") as? Bool ?? true
   }
 
   @Published var code = ""
@@ -20,11 +21,17 @@ class LoginViewModel: ObservableObject {
   @Published var agreeCode = false
   @Published var isAuthorization = 1
 
+  @Published var firstEntry = true {
+    didSet {
+      UserDefaults.standard.set(firstEntry, forKey: "firstEntry")
+    }
+  }
+
   @Published var isSuccessEnter = false {
     didSet {
-        UserDefaults.standard.set(isSuccessEnter, forKey: "isSuccessEnter")
+      UserDefaults.standard.set(isSuccessEnter, forKey: "isSuccessEnter")
     }
-}
+  }
 
   func checkLogin() {
     isAuthorization = firebaseAuth.checkPersonLogin(isSuccessEnter: isSuccessEnter)

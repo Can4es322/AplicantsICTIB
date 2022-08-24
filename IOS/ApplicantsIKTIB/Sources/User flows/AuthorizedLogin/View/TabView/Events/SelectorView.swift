@@ -9,12 +9,12 @@ struct SelectorView: View {
       TabSelector(selectedIndex: $selectedIndex)
       if selectedIndex == 0 {
         EventsView(isAuthorization: $isAuthorization)
+
       } else {
         RecordedEventsView(isAuthorization: $isAuthorization)
       }
     }
   }
-
 }
 //struct SelectorView_Previews: PreviewProvider {
 //  static var previews: some View {
