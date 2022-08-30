@@ -21,47 +21,47 @@ struct CommonEvents: View {
 
           VStack(alignment: .leading, spacing: 3) {
             if eventsData.isLongDate {
-              Text(eventsData.dayWeekStart ?? "Пн")
+              Text(eventsData.dayWeekStart ?? L10n.testDay)
                 .foregroundColor(Color(Asset.gray1.name))
                 .font(.system(size: 12, weight: .regular)) +
               Text(", ")
                 .foregroundColor(Color(Asset.gray1.name))
                 .font(.system(size: 12, weight: .regular)) +
-              Text(eventsData.dayStart ?? "Пн")
+              Text(eventsData.dayStart ?? L10n.testDay)
                 .foregroundColor(Color(Asset.gray1.name))
                 .font(.system(size: 12, weight: .regular)) +
               Text(" - ")
                 .foregroundColor(Color(Asset.gray1.name))
                 .font(.system(size: 12, weight: .regular)) +
-              Text(eventsData.dayWeekEnd ?? "Пн")
+              Text(eventsData.dayWeekEnd ?? L10n.testDay)
                 .foregroundColor(Color(Asset.gray1.name))
                 .font(.system(size: 12, weight: .regular)) +
               Text(", ")
                 .foregroundColor(Color(Asset.gray1.name))
                 .font(.system(size: 12, weight: .regular)) +
-              Text(eventsData.dayEnd ?? "Пн")
+              Text(eventsData.dayEnd ?? L10n.testDay)
                 .foregroundColor(Color(Asset.gray1.name))
                 .font(.system(size: 12, weight: .regular))
             } else {
-              Text(eventsData.dayWeekStart ?? "Пн")
+              Text(eventsData.dayWeekStart ?? L10n.testDay)
                 .foregroundColor(Color(Asset.gray1.name))
                 .font(.system(size: 12, weight: .regular)) +
               Text(", ")
                 .foregroundColor(Color(Asset.gray1.name))
                 .font(.system(size: 12, weight: .regular)) +
-              Text(eventsData.dayStart ?? "Пн")
+              Text(eventsData.dayStart ?? L10n.testDay)
                 .foregroundColor(Color(Asset.gray1.name))
                 .font(.system(size: 12, weight: .regular)) +
               Text(" ")
                 .foregroundColor(Color(Asset.gray1.name))
                 .font(.system(size: 12, weight: .regular)) +
-              Text(eventsData.timeStart ?? "Пн")
+              Text(eventsData.timeStart ?? L10n.testDay)
                 .foregroundColor(Color(Asset.gray1.name))
                 .font(.system(size: 12, weight: .regular)) +
               Text(" - ")
                 .foregroundColor(Color(Asset.gray1.name))
                 .font(.system(size: 12, weight: .regular)) +
-              Text(eventsData.timeEnd ?? "Пн")
+              Text(eventsData.timeEnd ?? L10n.testDay)
                 .foregroundColor(Color(Asset.gray1.name))
                 .font(.system(size: 12, weight: .regular))
             }
@@ -91,15 +91,3 @@ struct CommonEvents: View {
 
   }
 }
-
-//struct CommonEvents_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CommonEvents(
-//          placeHolderImage: URL(string: "https://klike.net/uploads/posts/2020-06/1591254382_2.jpg")!,
-//          placeHolderTitle: "Выпускной ИКТИБ",
-//          placeHolderDate: "Ср, 22 июня · 12:00 – 15:00",
-//          placeHolderPlace: "Клуб «Студенческий», Чехова 76",
-//          placeHolderTag: "Встреча",
-//          placeHolderMoney: 2)
-//    }
-//}

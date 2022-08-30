@@ -8,25 +8,26 @@ struct OnboardingPage2View: View {
     VStack(alignment: .leading, spacing: 0) {
       
       Image(Asset.books.name)
-        .padding(.top, 116)
+        .resizable()
+        .frame(maxWidth: .infinity, maxHeight: 294, alignment: .center)
+        .padding(.top, 70)
       
       Text(L10n.onboardingDescription)
         .foregroundColor(Color(Asset.blue1.name))
-        .font(.system(size: 22, weight: .regular))
+        .font(.system(size: 20, weight: .semibold))
         .padding(.top, 20)
-        .padding(.horizontal, 10)
+        .padding(.leading, 16)
       
       NavigationLink(destination: OnboardingPage3View(isAuthorization: $isAuthorization, firstEntry: $firstEntry)) {
-        Text(L10n.authorizationTextButton)
+        Text(L10n.textAuthorizationButton)
           .font(.system(size: 20, weight: .regular))
           .foregroundColor(.white)
           .frame(width: 194, height: 44)
           .background(Color(Asset.blue3.name))
           .cornerRadius(10)
-        
+          .padding(.horizontal, 10)
       }
       .frame(maxWidth: .infinity, alignment: .trailing)
-      .padding(.horizontal, 10)
       .padding(.top, 20)
       
       Spacer()

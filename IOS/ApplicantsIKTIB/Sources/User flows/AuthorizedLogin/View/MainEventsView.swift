@@ -2,19 +2,13 @@ import SwiftUI
 
 struct MainEventsView: View {
   @ObservedObject var loginData = LoginViewModel()
-  @State var selectedTab = 0
-  @State var tempIndex = 0
   @Binding var isAuthorization: Int
-  var tabs = ["События", "Профиль"]
-
   var body: some View {
     NavigationView {
       ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
-
-        TabView(selection: $selectedTab) {
-          SelectorView(selectedIndex: $tempIndex, isAuthorization: $isAuthorization)
+        TabView(selection: $loginData.selectedTab) {
+          SelectorView(selectedIndex: $loginData.tempIndex, isAuthorization: $isAuthorization)
             .tag(0)
-
 
           ProfileView(isAuthorization: $isAuthorization)
             .tag(1)
@@ -24,15 +18,15 @@ struct MainEventsView: View {
           Spacer()
 
           Button {
-            selectedTab = 0
+            loginData.selectedTab = 0
           } label: {
             VStack(spacing: 2) {
               Image(Asset.tabEvent.name)
                 .renderingMode(.template)
-              Text("События")
+              Text(L10n.eventsTab)
                 .font(.system(size: 10, weight: .regular))
             }
-            .foregroundColor(selectedTab == 0 ?
+            .foregroundColor(loginData.selectedTab == 0 ?
                              Color(Asset.blue1.name) :
                               Color(Asset.gray1.name))
           }
@@ -41,15 +35,15 @@ struct MainEventsView: View {
           Spacer()
 
           Button {
-            selectedTab = 1
+            loginData.selectedTab = 1
           } label: {
             VStack(spacing: 2) {
               Image(Asset.tabProfile.name)
                 .renderingMode(.template)
-              Text("Профиль")
+              Text(L10n.profileTab)
                 .font(.system(size: 10, weight: .regular))
             }
-            .foregroundColor(selectedTab == 1 ?
+            .foregroundColor(loginData.selectedTab == 1 ?
                              Color(Asset.blue1.name) :
                               Color(Asset.gray1.name))
           }
@@ -70,6 +64,6 @@ struct MainEventsView: View {
 
 struct MainEventsView_Previews: PreviewProvider {
   static var previews: some View {
-    StartView()
+    MainEventsView(isAuthorization: .constant(1))
   }
 }

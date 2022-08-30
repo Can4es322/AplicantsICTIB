@@ -14,7 +14,7 @@ struct StartView: View {
         case 3:
           MainGuestView(isAuthorization: $loginData.isAuthorization)
         default:
-          Authorization(isAuthorization: $loginData.isAuthorization)
+          AuthorizationView(isAuthorization: $loginData.isAuthorization)
         }
       }
     }

@@ -3,7 +3,7 @@ import SwiftUI
 struct EventsView: View {
 
   let insetText = EdgeInsets(top: 14, leading: 13, bottom: 0, trailing: 13)
-  @ObservedObject var viewData = ViewController()
+  @StateObject var viewData = ServerHandler()
   @Binding var isAuthorization: Int
 
   var body: some View {
@@ -67,15 +67,15 @@ struct EventsView: View {
       .navigationBarBackButtonHidden(true)
       .task {
         Task {
-          try await viewData.sendEvents(numberTake: 5)
+          try await viewData.sendEvents(numberTake: 3)
         }
       }
       .padding(.top, 15)
     }
 }
 
-//struct Events_Previews: PreviewProvider {
-//  static var previews: some View {
-//    EventsView()
-//  }
-//}
+struct Events_Previews: PreviewProvider {
+  static var previews: some View {
+    EventsView(isAuthorization: .constant(1))
+  }
+}

@@ -2,13 +2,13 @@ import SwiftUI
 
 struct AdditinalRegistrationView: View {
   
-  @ObservedObject var viewData = ViewController()
+  @ObservedObject var viewData = ServerHandler()
   @ObservedObject var loginData = LoginViewModel()
   var token: String?
   @Binding var isAuthorization: Int
-  
+
   let insetTextField = EdgeInsets(top: 42, leading: 16, bottom: 0, trailing: 16)
-  
+
   var body: some View {
     VStack {
       VStack {
@@ -21,7 +21,7 @@ struct AdditinalRegistrationView: View {
       }
       .padding(.top)
       .padding(.leading, 24)
-      
+
       TextFieldPersonData(
         placeHolderText: L10n.lastNameTextField,
         placeHolderBinding: $viewData.person.lastName,
@@ -35,35 +35,35 @@ struct AdditinalRegistrationView: View {
         placeHolderFormatter: nil
       )
       .padding(.top, 20)
-      
+
       TextFieldPersonData(
         placeHolderText: L10n.middleNameTextField,
         placeHolderBinding: $viewData.person.middleName,
         placeHolderFormatter: nil
       )
       .padding(.top, 20)
-      
+
       TextFieldPersonData(
         placeHolderText: L10n.birthdayTextField,
         placeHolderBinding: $viewData.person.birthDate,
         placeHolderFormatter: BirthdayFormatter()
       )
       .padding(.top, 20)
-      
+
       TextFieldPersonData(
         placeHolderText: L10n.cityTextField,
         placeHolderBinding: $viewData.person.city,
         placeHolderFormatter: nil
       )
       .padding(.top, 20)
-      
+
       TextFieldPersonData(
         placeHolderText: L10n.schoolTextField,
         placeHolderBinding: $viewData.person.school,
         placeHolderFormatter: nil
       )
       .padding(.top, 20)
-      
+
       NavigationLink(
         destination: SuccesRegistration(isAuthorization: $isAuthorization),
         isActive: $viewData.isSuccesReg
@@ -78,9 +78,7 @@ struct AdditinalRegistrationView: View {
             .font(.system(size: 16, weight: .bold))
             .foregroundColor(.white)
             .background(
-              viewData.checkPersonData() ?
-              Color(Asset.gray2.name) :
-                Color(Asset.blue2.name))
+              viewData.checkPersonData() ? Color(Asset.gray2.name) : Color(Asset.blue2.name))
             .cornerRadius(8)
         }
         .disabled(viewData.checkPersonData())

@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SuccesRegistration: View {
   @Binding var isAuthorization: Int
- 
+
   var body: some View {
     VStack {
       Text(L10n.succesRegistrationTitle)
@@ -10,12 +10,12 @@ struct SuccesRegistration: View {
         .font(.system(size: 24, weight: .regular))
         .multilineTextAlignment(.center)
         .padding(.top, 127)
-      
-      Image("succesReg")
+
+      Image(Asset.succesReg.name)
         .padding(.top, 43)
-      
+
       Spacer()
-      
+
       Button {
         isAuthorization = 2
       } label: {
@@ -28,7 +28,6 @@ struct SuccesRegistration: View {
       }
       .padding(.horizontal, 16)
       .padding(.bottom, 70)
-      
     }
     .navigationBarBackButtonHidden(true)
     .navigationBarHidden(true)

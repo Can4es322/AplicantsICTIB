@@ -2,7 +2,6 @@ import SwiftUI
 
 struct TabSelector: View {
   @Binding var selectedIndex: Int
-  @State private var underlineWidths: [CGFloat] = []
   let titles = [L10n.eventsNavigationAll, L10n.eventsNavigationRecerved]
 
   var body: some View {
@@ -41,11 +40,7 @@ struct TabSelector: View {
 
   private func selectorItem(_ title: String, swicth: Bool) -> some View {
       Text(title)
-          .foregroundColor(
-              swicth
-              ? .black
-              : Color(Asset.gray1.name)
-          )
+          .foregroundColor(swicth ? .black : Color(Asset.gray1.name))
           .font(.system(size: 16, weight: .regular))
   }
 }

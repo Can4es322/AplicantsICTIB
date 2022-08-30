@@ -119,5 +119,4 @@ class EventsViewModel: ObservableObject {
       return true
     }
   }
-
 }

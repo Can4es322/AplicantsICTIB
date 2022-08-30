@@ -3,7 +3,7 @@ import SwiftUI
 struct CodeViewForEnterToProfile: View {
   
   @ObservedObject var loginData = LoginViewModel()
-  @ObservedObject var response = ViewController()
+  @ObservedObject var response = ServerHandler()
 
   var phoneNumber: String
   var id: String?
@@ -19,7 +19,7 @@ struct CodeViewForEnterToProfile: View {
       VStack(alignment: .leading, spacing: 16) {
         Text(L10n.enterCode)
           .font(Font.system(size: 20, weight: .bold ))
-        
+
         Group {
           Text(L10n.textPart1)
             .foregroundColor(Color(Asset.gray1.name))
@@ -42,7 +42,7 @@ struct CodeViewForEnterToProfile: View {
       .foregroundColor(Color(Asset.gray1.name))
       .border(Color(Asset.gray1.name))
       .padding(insetTextField)
-      
+
       Button {
         if loginData.buttonInfoCode == 1 {
           loginData.buttonInfoCode = 2
@@ -66,7 +66,7 @@ struct CodeViewForEnterToProfile: View {
       }
       .padding(insetButton)
       .frame(maxWidth: .infinity, alignment: .leading)
-      
+
       Button {
         Task {
           try await loginData.firebaseAuth.authCodeRegistration(
@@ -79,8 +79,6 @@ struct CodeViewForEnterToProfile: View {
           if response.isSuccesLogin {
             isAuthorization = 2
           }
-
-          
         }
       } label: {
         Text(L10n.textCodeButton)
@@ -91,7 +89,7 @@ struct CodeViewForEnterToProfile: View {
           .cornerRadius(8)
       }
       .padding(insetButton)
-      
+
       Spacer()
     }
     .navigationBarTitleDisplayMode(.inline)

@@ -2,15 +2,13 @@ import SwiftUI
 
 struct MainGuestView: View {
   @ObservedObject var loginData = LoginViewModel()
-  @State var selectedTab = 0
-  @State var tempIndex = 0
+
   @Binding var isAuthorization: Int
 
   var body: some View {
     NavigationView {
       ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
-        TabView(selection: $selectedTab) {
-
+        TabView(selection: $loginData.selectedTab) {
           VStack {
             Text(L10n.eventsTitle)
               .font(.system(size: 25, weight: .bold))
@@ -28,15 +26,15 @@ struct MainGuestView: View {
           Spacer()
 
           Button {
-            selectedTab = 0
+            loginData.selectedTab = 0
           } label: {
             VStack(spacing: 2) {
               Image(Asset.tabEvent.name)
                 .renderingMode(.template)
-              Text("События")
+              Text(L10n.eventsTab)
                 .font(.system(size: 10, weight: .regular))
             }
-            .foregroundColor(selectedTab == 0 ?
+            .foregroundColor(loginData.selectedTab == 0 ?
                              Color(Asset.blue1.name) :
                               Color(Asset.gray1.name))
           }
@@ -45,15 +43,15 @@ struct MainGuestView: View {
           Spacer()
 
           Button {
-            selectedTab = 1
+            loginData.selectedTab = 1
           } label: {
             VStack(spacing: 2) {
               Image(Asset.university.name)
                 .renderingMode(.template)
-              Text("О Вузе")
+              Text(L10n.instituteTab)
                 .font(.system(size: 10, weight: .regular))
             }
-            .foregroundColor(selectedTab == 1 ?
+            .foregroundColor(loginData.selectedTab == 1 ?
                              Color(Asset.blue1.name) :
                               Color(Asset.gray1.name))
           }

@@ -8,21 +8,20 @@ struct RegistrationViewForEnterToProfile: View {
   let insetTextTitle = EdgeInsets(top: 20, leading: 16, bottom: 0, trailing: 16)
   let insetTextField = EdgeInsets(top: 91, leading: 16, bottom: 0, trailing: 16)
   let insetButton = EdgeInsets(top: 71, leading: 16, bottom: 0, trailing: 16)
-  
+
   var body: some View {
     VStack {
       VStack(alignment: .leading, spacing: 12) {
         Text(L10n.infoTextNumberPhone)
           .font(Font.system(size: 20, weight: .bold ))
-        
+
         Text(L10n.infoTextCode)
           .foregroundColor(Color(Asset.gray1.name))
           .font(.system(size: 16, weight: .regular))
-        
       }
       .frame(maxWidth: .infinity, alignment: .leading)
       .padding(insetTextTitle)
-      
+
       TextField(
         L10n.infoTextField,
         value: $loginData.firebaseAuth.phoneNumber,

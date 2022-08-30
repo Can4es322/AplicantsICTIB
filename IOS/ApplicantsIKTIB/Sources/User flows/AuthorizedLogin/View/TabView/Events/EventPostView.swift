@@ -3,7 +3,7 @@ import SwiftUI
 struct EventPostView: View {
   var placeHolderEventData: Event
   let insetContent = EdgeInsets(top: 15, leading: 16, bottom: 0, trailing: 0)
-  @ObservedObject var server = ViewController()
+  @ObservedObject var server = ServerHandler()
   @StateObject var eventsData = EventsViewModel()
   @Binding var isAuthorization: Int
   @Environment (\.dismiss) var dismiss
@@ -35,32 +35,32 @@ struct EventPostView: View {
         HStack {
           Image(Asset.date.name)
 
-          Text("Начало: ")
+          Text(L10n.startEvents)
             .font(.system(size: 12, weight: .regular)) +
-          Text(eventsData.timeStart ?? "aboba")
+          Text(eventsData.timeStart ?? L10n.testDay)
             .font(.system(size: 12, weight: .regular)) +
           Text(", ")
             .font(.system(size: 12, weight: .regular)) +
-          Text(eventsData.dayWeekStart ?? "Пн")
+          Text(eventsData.dayWeekStart ?? L10n.testDay)
             .font(.system(size: 12, weight: .regular)) +
           Text(" ") +
-          Text(eventsData.dayStart ?? "aboba")
+          Text(eventsData.dayStart ?? L10n.testDay)
             .font(.system(size: 12, weight: .regular))
         }
 
         HStack {
           Image(Asset.time.name)
 
-          Text("Конец: ")
+          Text(L10n.endEvents)
             .font(.system(size: 12, weight: .regular)) +
-          Text(eventsData.timeEnd ?? "aboba")
+          Text(eventsData.timeEnd ?? L10n.testDay)
             .font(.system(size: 12, weight: .regular)) +
           Text(", ")
             .font(.system(size: 12, weight: .regular)) +
-          Text(eventsData.dayWeekEnd ?? "Пн")
+          Text(eventsData.dayWeekEnd ?? L10n.testDay)
             .font(.system(size: 12, weight: .regular)) +
           Text(" ") +
-          Text(eventsData.dayEnd ?? "aboba")
+          Text(eventsData.dayEnd ?? L10n.testDay)
             .font(.system(size: 12, weight: .regular))
         }
 
@@ -91,7 +91,7 @@ struct EventPostView: View {
             Button {
               eventsData.showingAlert = true
             }label: {
-              Text("Отменить запись")
+              Text(L10n.cancelEntry)
                 .frame(maxWidth: .infinity)
                 .frame(height: 44)
                 .font(.system(size: 16, weight: .semibold))
@@ -99,9 +99,9 @@ struct EventPostView: View {
                 .background(Color(Asset.red2.name))
             }
             .padding(.top, 32)
-            .alert("Отменить запись на мероприятие?", isPresented: $eventsData.showingAlert) {
+            .alert(L10n.cancelEntryAlert, isPresented: $eventsData.showingAlert) {
               HStack {
-                Button("Нет", role: .cancel) { }
+                Button(L10n.alertNo, role: .cancel) { }
 
                 Button {
                   Task {
@@ -109,12 +109,12 @@ struct EventPostView: View {
                     eventsData.checkPersonSignUpEvent(specificEvent: server.specificEvent ?? specificEventData, signUpEvent: server.signUpEvent ?? signUpEventData)
                   }
                 } label: {
-                  Text("Да")
+                  Text(L10n.alertYes)
                 }
               }
             }
 
-            Text("После начала мероприятия не забудьте подтвердить своё присутствие")
+            Text(L10n.warningEvents)
               .frame(maxWidth: .infinity, alignment: .leading)
               .font(.system(size: 14, weight: .regular))
               .foregroundColor(Color(Asset.gray1.name))
@@ -122,7 +122,7 @@ struct EventPostView: View {
 
         case 3:
           VStack(alignment: .leading, spacing: 8) {
-            Text("Подтвердите присутствие:")
+            Text(L10n.confirmEvents)
               .foregroundColor(.black)
               .font(.system(size: 14, weight: .regular))
 
@@ -146,7 +146,7 @@ struct EventPostView: View {
               eventsData.checkPersonSignUpEvent(specificEvent: server.specificEvent ?? specificEventData, signUpEvent: server.signUpEvent ?? signUpEventData)
             }
           }label: {
-            Text("Подтвердить")
+            Text(L10n.confirm)
               .frame(maxWidth: .infinity)
               .frame(height: 44)
               .font(.system(size: 16, weight: .semibold))
@@ -157,18 +157,18 @@ struct EventPostView: View {
           .disabled(eventsData.checkEmptyCode())
 
         case 4:
-          Text("")
+          Text(L10n.testDay)
         case 5:
           VStack {
             Image(Asset.bottomSheet.name)
 
-            Text("Вы отмечены на мероприятии!")
+            Text(L10n.succesConfirmEvents)
               .font(.system(size: 22, weight: .regular))
 
             Button {
               self.dismiss()
             } label: {
-              Text("Класс")
+              Text(L10n.bottomSheet)
                 .font(.system(size: 16, weight: .regular))
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity)
@@ -182,7 +182,7 @@ struct EventPostView: View {
           Button {
             isAuthorization = 1
           }label: {
-            Text("Зарегестрируйтесь чтобы записаться")
+            Text(L10n.anonymousPerson)
               .frame(maxWidth: .infinity)
               .frame(height: 44)
               .font(.system(size: 16, weight: .semibold))
@@ -226,40 +226,3 @@ struct EventPostView: View {
     }
   }
 }
-
-//extension View {
-//  func halfSheet<SheetView: View>(showSheet: Binding<Bool>, @ViewBuilder
-//                                  sheetView: @escaping () -> SheetView) -> some View {
-//    return self
-//      .background( HalfSheetHelper(sheetView: sheetView(), isShowing: showSheet))
-//  }
-//}
-//
-//struct HalfSheetHelper<SheetView: View>: UIViewControllerRepresentable {
-//  var sheetView: SheetView
-//  @Binding var isShowing: Bool
-//  let controller = UIViewController()
-//
-//  func makeUIViewController(context: Context) -> UIViewController {
-//    controller.view.backgroundColor = .clear
-//
-//    return controller
-//  }
-//  func updateUIViewController(_ uiViewController: UIViewController,
-//                              context: Context) {
-//    if isShowing {
-//      let sheetController = CustomHostingController(rootView: sheetView)
-//
-//      uiViewController.present(sheetController, animated: true)
-//    }
-//  }
-//}
-//
-//class CustomHostingController<Content: View>: UIHostingController<Content> {
-//  override func viewDidLoad() {
-//    if let presentationController = presentationController as?
-//        UISheetPresentationController {
-//      presentationController.detents = [.medium()]
-//    }
-//  }
-//}

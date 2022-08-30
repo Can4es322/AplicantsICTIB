@@ -5,7 +5,7 @@ struct ProfileView: View {
   let insetExit = EdgeInsets(top: 0, leading: 20, bottom: 31, trailing: 0)
   let insetCardButtons = EdgeInsets(top: 27, leading: 17, bottom: 0, trailing: 17)
   @ObservedObject var loginData = LoginViewModel()
-  @StateObject var server = ViewController()
+  @StateObject var server = ServerHandler()
   @Binding var isAuthorization: Int
 
   var body: some View {
@@ -26,7 +26,6 @@ struct ProfileView: View {
           ProgressView()
             .frame(maxWidth: 95, maxHeight: 95, alignment: .center)
         }
-
 
         VStack(alignment: .leading, spacing: 12) {
           Text(server.lastName)
@@ -51,7 +50,7 @@ struct ProfileView: View {
           .cornerRadius(5)
         }
       }
-
+      .frame(maxWidth: .infinity)
       .padding(insetProfile)
 
       VStack(alignment: .leading, spacing: 20) {
@@ -99,7 +98,6 @@ struct ProfileView: View {
 
       }
       .frame(maxWidth: .infinity, alignment: .leading)
-      .background(.white)
       .padding(insetCardButtons)
 
       Spacer()
@@ -112,12 +110,6 @@ struct ProfileView: View {
     .navigationBarTitle("")
     .navigationBarHidden(true)
     .navigationBarBackButtonHidden(true)
-    .background(Color(Asset.gray6.name))
+    .background(Color(Asset.white.name))
   }
 }
-
-//struct ProfileView_Previews: PreviewProvider {
-//  static var previews: some View {
-//    ProfileView()
-//  }
-//}

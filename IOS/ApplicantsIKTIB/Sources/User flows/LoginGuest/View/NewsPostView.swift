@@ -2,9 +2,9 @@ import SwiftUI
 
 struct NewsPostView: View {
   var placeHolderNewsData: New
-  @ObservedObject var newsViewModel = EventsViewModel()
+  @ObservedObject var newsData = EventsViewModel()
     var body: some View {
-      ScrollView(.vertical, showsIndicators: false){
+      ScrollView(.vertical, showsIndicators: false) {
         VStack(alignment: .leading) {
           AsyncImage(url: URL(string: placeHolderNewsData.image)) { image in
             image
@@ -22,7 +22,7 @@ struct NewsPostView: View {
               .renderingMode(.template)
               .foregroundColor(.blue)
 
-            Text(newsViewModel.createdAt ?? "")
+            Text(newsData.createdAt ?? "")
               .font(.system(size: 12, weight: .regular))
               .foregroundColor(Color(Asset.gray1.name))
           }
@@ -40,7 +40,7 @@ struct NewsPostView: View {
         }
       }
       .task {
-        newsViewModel.dateBuildingNews(startDate: placeHolderNewsData.createdAt)
+        newsData.dateBuildingNews(startDate: placeHolderNewsData.createdAt)
       }
       .frame(maxWidth: .infinity, alignment: .leading)
       .padding(.horizontal, 15)

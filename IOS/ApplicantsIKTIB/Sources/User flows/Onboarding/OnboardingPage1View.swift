@@ -7,7 +7,7 @@ struct OnboardingPage1View: View {
   var body: some View {
     NavigationView {
       VStack(alignment: .leading, spacing: 0) {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 0) {
           Text(L10n.universityIKTIB)
             .font(.system(size: 64, weight: .semibold))
             .foregroundColor(Color(Asset.blue1.name))
@@ -17,18 +17,19 @@ struct OnboardingPage1View: View {
 
           Text(L10n.fullNameUniversity)
             .foregroundColor(Color(Asset.blue1.name))
-            .font(.system(size: 24, weight: .regular))
-            .padding(.top, 20)
+            .font(.system(size: 20, weight: .regular))
+            .padding(.top, 10)
         }
         .frame(maxWidth: .infinity)
-        .padding(.horizontal, 20)
-        .padding(.top, 73)
+        .padding(.horizontal, 16)
+        .padding(.top, 53)
 
         Image(Asset.house.name)
-          .frame(maxWidth: .infinity)
+          .resizable()
+          .frame(maxWidth: .infinity, maxHeight: 215, alignment: .center)
 
         NavigationLink(destination: OnboardingPage2View(isAuthorization: $isAuthorization, firstEntry: $firstEntry)) {
-          Text(L10n.authorizationTextButton)
+          Text(L10n.textAuthorizationButton)
             .font(.system(size: 20, weight: .regular))
             .foregroundColor(.white)
             .frame(width: 194, height: 44)
@@ -55,7 +56,6 @@ struct OnboardingPage1View: View {
         .frame(maxWidth: .infinity, alignment: .center)
         .offset(y: -26)
       }
-      .frame(maxHeight: .infinity)
       .background(Color(Asset.blue4.name))
       .ignoresSafeArea()
       .navigationBarTitle("")

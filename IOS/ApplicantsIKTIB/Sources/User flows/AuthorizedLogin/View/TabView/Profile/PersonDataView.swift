@@ -4,8 +4,8 @@ struct PersonDataView: View {
   enum FocusField: Hashable {
      case field
    }
-  
-  @ObservedObject var viewData = ViewController()
+
+  @ObservedObject var viewData = ServerHandler()
   @ObservedObject var profileData = EventsViewModel()
   @FocusState private var focusField: FocusField?
   var placeHolderProfileData: ProfileData
@@ -13,7 +13,7 @@ struct PersonDataView: View {
   var body: some View {
     VStack(spacing: 25) {
       VStack(spacing: 24) {
-        
+
         TextFieldPersonData(
           placeHolderText: L10n.lastNameTextField,
           placeHolderBinding: $viewData.person.lastName,
@@ -32,19 +32,19 @@ struct PersonDataView: View {
           placeHolderBinding: $viewData.person.middleName,
           placeHolderFormatter: nil
         )
-        
+
         TextFieldPersonData(
           placeHolderText: L10n.birthdayTextField,
           placeHolderBinding: $viewData.person.birthDate,
           placeHolderFormatter: BirthdayFormatter()
         )
-        
+
         TextFieldPersonData(
           placeHolderText: L10n.cityTextField,
           placeHolderBinding: $viewData.person.city,
           placeHolderFormatter: nil
         )
-        
+
         TextFieldPersonData(
           placeHolderText: L10n.schoolTextField,
           placeHolderBinding: $viewData.person.school,
@@ -92,7 +92,7 @@ struct PersonDataView: View {
     .toolbar(content: {
       ToolbarItem(placement: ToolbarItemPlacement.principal) {
         VStack {
-          Text("Персональные данные")
+          Text(L10n.dataPerson)
             .font(.system(size: 20, weight: .bold))
         }
       }
@@ -102,9 +102,3 @@ struct PersonDataView: View {
     .background(Color(Asset.gray6.name))
   }
 }
-
-//struct PersonDataView_Previews: PreviewProvider {
-//  static var previews: some View {
-//    PersonDataView()
-//  }
-//}

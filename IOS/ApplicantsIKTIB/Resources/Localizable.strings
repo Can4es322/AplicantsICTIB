@@ -62,6 +62,8 @@
 "profileHelp" = "Связаться с поддержкой";
 "profileExit" = "Выход";
 "profileSave" = "Сохранить";
+"dataPerson" = "Персональные данные";
+"eventsVisited" = "Посещенные мероприятия";
 
 "tabNameEvent" = "События";
 "tabNameProfile" = "Профиль";
@@ -78,4 +80,22 @@
 "onboardingDescription" = "Институт компьютерных технологий и информационной безопасности является ведущим Институтом Юга России, осуществляющим подготовку кадров в сфере IT";
 "taskDescription" = "Ходи на мероприятия и получай баллы";
 "bonusesDescription" = "Обменивай баллы на подарки!";
-"clear" = "Понятно";
+"onBoarding3" = "Хочу подарок";
+
+
+"eventsTab" = "События";
+"instituteTab" = "О Вузе";
+"profileTab" = "Профиль";
+"testDay" = "";
+"startEvents" = "Начало: ";
+"endEvents" = "Конец: ";
+"cancelEntry" = "Отменить запись";
+"cancelEntryAlert" = "Отменить запись на мероприятие?";
+"alertNo" = "Нет";
+"alertYes" = "Да";
+"warningEvents" = "После начала мероприятия не забудьте подтвердить своё присутствие";
+"confirmEvents" = "Подтвердите присутствие:";
+"confirm" = "Подтвердить";
+"succesConfirmEvents" = "Вы отмечены на мероприятии!";
+"bottomSheet" = "Класс";
+"anonymousPerson" = "Зарегестрируйтесь чтобы записаться";

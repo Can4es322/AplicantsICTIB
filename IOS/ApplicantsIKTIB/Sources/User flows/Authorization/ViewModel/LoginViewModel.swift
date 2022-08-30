@@ -20,6 +20,8 @@ class LoginViewModel: ObservableObject {
   @Published var text = ""
   @Published var agreeCode = false
   @Published var isAuthorization = 1
+  @Published var selectedTab = 0
+  @Published var tempIndex = 0
 
   @Published var firstEntry = true {
     didSet {
@@ -34,18 +36,19 @@ class LoginViewModel: ObservableObject {
   }
 
   func checkLogin() {
+    firstEntry = true
     isAuthorization = firebaseAuth.checkPersonLogin(isSuccessEnter: isSuccessEnter)
   }
 
   func infoCode() {
     var text = L10n.repeatCodeButton
-    
+
     if buttonInfoCode == 2 {
       text = L10n.codeRepeatSend
     }
     changeText = text
   }
-  
+
   func switchingState() {
     if buttonInfoCode == 2 {
       if currentSecond > 0 {
@@ -56,11 +59,11 @@ class LoginViewModel: ObservableObject {
       }
     }
   }
-  
+
   func phonePromt() -> Bool {
     return registrationButton && firebaseAuth.phoneNumber.count != 18 ? true : false
   }
-  
+
   func checkPhoneNumber() async throws {
     if firebaseAuth.phoneNumber.count == 18 {
       try await firebaseAuth.verifyUser()

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct UniversityView: View {
-  @ObservedObject var server = ViewController()
+  @ObservedObject var server = ServerHandler()
 
   var body: some View {
     ScrollView(.vertical, showsIndicators: false) {

@@ -18,6 +18,12 @@ internal enum L10n {
   internal static let additionalTitle1 = L10n.tr("Localizable", "additionalTitle1")
   /// про абитуриента
   internal static let additionalTitle2 = L10n.tr("Localizable", "additionalTitle2")
+  /// Нет
+  internal static let alertNo = L10n.tr("Localizable", "alertNo")
+  /// Да
+  internal static let alertYes = L10n.tr("Localizable", "alertYes")
+  /// Зарегестрируйтесь чтобы записаться
+  internal static let anonymousPerson = L10n.tr("Localizable", "anonymousPerson")
   /// Войти в профиль
   internal static let authorizationTextButton = L10n.tr("Localizable", "authorizationTextButton")
   /// Авторизация
@@ -26,14 +32,26 @@ internal enum L10n {
   internal static let birthdayTextField = L10n.tr("Localizable", "birthdayTextField")
   /// Обменивай баллы на подарки!
   internal static let bonusesDescription = L10n.tr("Localizable", "bonusesDescription")
+  /// Класс
+  internal static let bottomSheet = L10n.tr("Localizable", "bottomSheet")
+  /// Отменить запись
+  internal static let cancelEntry = L10n.tr("Localizable", "cancelEntry")
+  /// Отменить запись на мероприятие?
+  internal static let cancelEntryAlert = L10n.tr("Localizable", "cancelEntryAlert")
   /// Город
   internal static let cityTextField = L10n.tr("Localizable", "cityTextField")
-  /// Понятно
-  internal static let clear = L10n.tr("Localizable", "clear")
   /// Не получили код? Помощь
   internal static let codeNotRecived = L10n.tr("Localizable", "codeNotRecived")
   /// Код отправлен повторно 
   internal static let codeRepeatSend = L10n.tr("Localizable", "codeRepeatSend")
+  /// Подтвердить
+  internal static let confirm = L10n.tr("Localizable", "confirm")
+  /// Подтвердите присутствие:
+  internal static let confirmEvents = L10n.tr("Localizable", "confirmEvents")
+  /// Персональные данные
+  internal static let dataPerson = L10n.tr("Localizable", "dataPerson")
+  /// Конец: 
+  internal static let endEvents = L10n.tr("Localizable", "endEvents")
   /// Введите одноразовый код
   internal static let enterCode = L10n.tr("Localizable", "enterCode")
   /// Войти как гость
@@ -53,7 +71,11 @@ internal enum L10n {
   /// Ближайшие
   internal static let eventsNewsTitle = L10n.tr("Localizable", "eventsNewsTitle")
   /// События
+  internal static let eventsTab = L10n.tr("Localizable", "eventsTab")
+  /// События
   internal static let eventsTitle = L10n.tr("Localizable", "eventsTitle")
+  /// Посещенные мероприятия
+  internal static let eventsVisited = L10n.tr("Localizable", "eventsVisited")
   /// Неверный код
   internal static let failCode = L10n.tr("Localizable", "failCode")
   /// Институт компьютерных технологий и информационной безопастности
@@ -67,6 +89,8 @@ internal enum L10n {
   internal static let infoTextField = L10n.tr("Localizable", "infoTextField")
   /// Укажите ваш номер телефона
   internal static let infoTextNumberPhone = L10n.tr("Localizable", "infoTextNumberPhone")
+  /// О Вузе
+  internal static let instituteTab = L10n.tr("Localizable", "instituteTab")
   /// Фамилия
   internal static let lastNameTextField = L10n.tr("Localizable", "lastNameTextField")
   /// Отчество
@@ -75,6 +99,8 @@ internal enum L10n {
   internal static let moreText = L10n.tr("Localizable", "moreText")
   /// Имя
   internal static let nameTextField = L10n.tr("Localizable", "nameTextField")
+  /// Хочу подарок
+  internal static let onBoarding3 = L10n.tr("Localizable", "onBoarding3")
   /// Институт компьютерных технологий и информационной безопасности является ведущим Институтом Юга России, осуществляющим подготовку кадров в сфере IT
   internal static let onboardingDescription = L10n.tr("Localizable", "onboardingDescription")
   /// Продолжая пользоваться приложением,
@@ -99,6 +125,8 @@ internal enum L10n {
   /// Сохранить
   internal static let profileSave = L10n.tr("Localizable", "profileSave")
   /// Профиль
+  internal static let profileTab = L10n.tr("Localizable", "profileTab")
+  /// Профиль
   internal static let profileTitle = L10n.tr("Localizable", "profileTitle")
   /// Регистрация
   internal static let registrationTextButton = L10n.tr("Localizable", "registrationTextButton")
@@ -106,6 +134,10 @@ internal enum L10n {
   internal static let repeatCodeButton = L10n.tr("Localizable", "repeatCodeButton")
   /// Школа
   internal static let schoolTextField = L10n.tr("Localizable", "schoolTextField")
+  /// Начало: 
+  internal static let startEvents = L10n.tr("Localizable", "startEvents")
+  /// Вы отмечены на мероприятии!
+  internal static let succesConfirmEvents = L10n.tr("Localizable", "succesConfirmEvents")
   /// Класс
   internal static let succesRegistrationButton = L10n.tr("Localizable", "succesRegistrationButton")
   /// Ура!
@@ -118,6 +150,8 @@ internal enum L10n {
   internal static let tabNameProfile = L10n.tr("Localizable", "tabNameProfile")
   /// Ходи на мероприятия и получай баллы
   internal static let taskDescription = L10n.tr("Localizable", "taskDescription")
+  /// 
+  internal static let testDay = L10n.tr("Localizable", "testDay")
   /// Продолжить
   internal static let textAuthorizationButton = L10n.tr("Localizable", "textAuthorizationButton")
   /// Продолжить
@@ -132,6 +166,8 @@ internal enum L10n {
   internal static let university = L10n.tr("Localizable", "university")
   /// ИКТИБ
   internal static let universityIKTIB = L10n.tr("Localizable", "universityIKTIB")
+  /// После начала мероприятия не забудьте подтвердить своё присутствие
+  internal static let warningEvents = L10n.tr("Localizable", "warningEvents")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

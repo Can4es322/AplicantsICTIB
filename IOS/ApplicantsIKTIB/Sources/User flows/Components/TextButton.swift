@@ -6,6 +6,7 @@ struct TextButton: View {
     var body: some View {
         Text(placeHolderText)
             .frame(maxWidth: .infinity, maxHeight: 44, alignment: .center)
+            .frame(height: 44)
             .font(.system(size: 16, weight: .bold))
             .cornerRadius(4)
     }
