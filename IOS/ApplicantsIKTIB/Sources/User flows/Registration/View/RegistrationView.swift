@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RegistrationView: View {
-    @ObservedObject var loginData = LoginViewModel()
+    @StateObject var loginData = LoginViewModel()
     @Binding var isAuthorization: Int
     
     let insetTextTitle = EdgeInsets(top: 20, leading: 16, bottom: 0, trailing: 16)
