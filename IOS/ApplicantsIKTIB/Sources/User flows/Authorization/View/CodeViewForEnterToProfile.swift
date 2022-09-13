@@ -4,7 +4,8 @@ struct CodeViewForEnterToProfile: View {
   
   @ObservedObject var loginData = LoginViewModel()
   @ObservedObject var response = ServerHandler()
-
+    @Binding var registrationButton: Bool
+    
   var phoneNumber: String
   var id: String?
   @Binding var isAuthorization: Int
@@ -91,6 +92,9 @@ struct CodeViewForEnterToProfile: View {
       .padding(insetButton)
 
       Spacer()
+    }
+    .task {
+        registrationButton = false
     }
     .navigationBarTitleDisplayMode(.inline)
     .navigationBarBackButtonHidden(true)
