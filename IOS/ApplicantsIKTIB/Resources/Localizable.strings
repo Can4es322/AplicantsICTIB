@@ -111,3 +111,4 @@
 "errorEmailIsNil" = "Почта введена не корректно";
 "errorTextEmailRegitration" = "Данная почта уже существует";
 "textEventsEmpty" = "Новые мероприятия\nна подходе!";
+"tabBarShop" = "Магазин";

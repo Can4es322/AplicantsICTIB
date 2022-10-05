@@ -48,6 +48,7 @@
 		991F5E9B28EC3D3400333D29 /* PhoneMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F5E9A28EC3D3400333D29 /* PhoneMethod.swift */; };
 		991F5E9E28EC43A400333D29 /* EmailMethodRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F5E9D28EC43A400333D29 /* EmailMethodRegistration.swift */; };
 		991F5EA028EC43BC00333D29 /* PhoneMethodRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F5E9F28EC43BC00333D29 /* PhoneMethodRegistration.swift */; };
+		998D562A28ED8AC30043D977 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998D562928ED8AC30043D977 /* ShopView.swift */; };
 		CE164C78281997D400DDB738 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE164C77281997D400DDB738 /* AuthorizationView.swift */; };
 		CE393ABE280594B6006B6C21 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE393ABD280594B6006B6C21 /* LoginViewModel.swift */; };
 		CE7A7CAF28369FCE00E59F33 /* Events1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A7CAE28369FCE00E59F33 /* Events1.swift */; };
@@ -112,6 +113,7 @@
 		991F5E9A28EC3D3400333D29 /* PhoneMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneMethod.swift; sourceTree = "<group>"; };
 		991F5E9D28EC43A400333D29 /* EmailMethodRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailMethodRegistration.swift; sourceTree = "<group>"; };
 		991F5E9F28EC43BC00333D29 /* PhoneMethodRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneMethodRegistration.swift; sourceTree = "<group>"; };
+		998D562928ED8AC30043D977 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		BA83EC3069C7134F47C79F6D /* Pods-ApplicantsIKTIB.debug development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicantsIKTIB.debug development.xcconfig"; path = "Target Support Files/Pods-ApplicantsIKTIB/Pods-ApplicantsIKTIB.debug development.xcconfig"; sourceTree = "<group>"; };
 		CE164C77281997D400DDB738 /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
 		CE393ABD280594B6006B6C21 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		571A294B28914F1E00064371 /* TabView */ = {
 			isa = PBXGroup;
 			children = (
+				998D562828ED8AB20043D977 /* Shop */,
 				571A29552891694400064371 /* Profile */,
 				571A29542891693300064371 /* Events */,
 			);
@@ -427,6 +430,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		998D562828ED8AB20043D977 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				998D562928ED8AC30043D977 /* ShopView.swift */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
 		B264160922A4CCF0F6C0D601 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -669,6 +680,7 @@
 				5785FA8A28B500C000ECB93B /* OnboardingPage2View.swift in Sources */,
 				CE9024CF28357E2100F0AFD8 /* SuccesRegistration.swift in Sources */,
 				CE7A7CB72836B50B00E59F33 /* CodeViewForEnterToProfile.swift in Sources */,
+				998D562A28ED8AC30043D977 /* ShopView.swift in Sources */,
 				991F5E9928EC3C1500333D29 /* EmailMethod.swift in Sources */,
 				5785FA7F28B37A6600ECB93B /* News.swift in Sources */,
 				57EA5784288958C500B6CC04 /* Strings.swift in Sources */,

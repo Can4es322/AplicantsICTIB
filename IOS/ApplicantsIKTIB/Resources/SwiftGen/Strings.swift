@@ -166,6 +166,8 @@ internal enum L10n {
   /// Регистрация прошла
   /// успешно.
   internal static let succesRegistrationTitle = L10n.tr("Localizable", "succesRegistrationTitle")
+  /// Магазин
+  internal static let tabBarShop = L10n.tr("Localizable", "tabBarShop")
   /// События
   internal static let tabNameEvent = L10n.tr("Localizable", "tabNameEvent")
   /// Профиль
