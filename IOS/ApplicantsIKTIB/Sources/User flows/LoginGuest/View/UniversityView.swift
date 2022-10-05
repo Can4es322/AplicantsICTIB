@@ -12,7 +12,7 @@ struct UniversityView: View {
           .padding(.bottom, 32)
           .padding(.top, 15)
 
-        ForEach(server.newsEvent?.data ?? news1) {post in
+        ForEach(server.newsEvent.data) {post in
           NewsEvent(placeHolderNewsData: post)
         }
 
@@ -22,10 +22,10 @@ struct UniversityView: View {
 
           let height = UIScreen.main.bounds.height / 1.5
 
-          if server.newsEvent?.meta.hasNextPage == true && minY < height {
+          if server.newsEvent.meta.hasNextPage == true && minY < height {
             DispatchQueue.main.async {
               Task {
-                try await server.loadMoreContentEvents()
+                try await server.loadMoreContentNews()
               }
             }
           }

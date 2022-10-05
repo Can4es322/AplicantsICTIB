@@ -8,7 +8,7 @@ struct RecordedEventsView: View {
     VStack {
       ScrollView(.vertical, showsIndicators: false) {
         VStack {
-          ForEach(server.recordedEvents?.data ?? recordedEvent) {post in
+            ForEach(server.recordedEvents.data) {post in
             CommonEvents(placeHolderEventData: post, isAuthorization: $isAuthorization)
           }
         }

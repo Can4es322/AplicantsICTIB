@@ -4,63 +4,55 @@ struct RegistrationView: View {
     @StateObject var loginData = LoginViewModel()
     @Binding var isAuthorization: Int
     
-    let insetTextTitle = EdgeInsets(top: 20, leading: 16, bottom: 0, trailing: 16)
-    let insetTextField = EdgeInsets(top: 91, leading: 16, bottom: 0, trailing: 16)
-    let insetButton = EdgeInsets(top: 71, leading: 16, bottom: 0, trailing: 16)
-    
     var body: some View {
         VStack {
-            VStack(alignment: .leading, spacing: 12) {
-                Text(L10n.infoTextNumberPhone)
-                    .font(Font.system(size: 20, weight: .bold ))
-                
-                Text(L10n.infoTextCode)
-                    .foregroundColor(Color(Asset.gray1.name))
-                    .font(.system(size: 16, weight: .regular))
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(insetTextTitle)
-            
-            TextField(
-                L10n.infoTextField,
-                value: $loginData.firebaseAuth.phoneNumber,
-                formatter: PhoneFormatter())
-            .padding(.horizontal, 16)
-            .frame(maxWidth: .infinity, maxHeight: 44)
-            .foregroundColor(Color(Asset.gray1.name))
-            .border(Color(Asset.gray1.name))
-            .padding(insetTextField)
-            
-            if loginData.phonePromt() {
-                Text(L10n.errorText)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.system(size: 15, weight: .regular))
-                    .foregroundColor(Color(Asset.red.name))
-                    .padding(insetTextTitle)
-            }
-            
-            NavigationLink(
-                destination: CodeView(
-                    isAuthorization: $isAuthorization, phoneNumber: loginData.firebaseAuth.phoneNumber,
-                    id: loginData.firebaseAuth.id ?? ""),
-                isActive: $loginData.registrationButton) {
-                    Button {
-                        Task {
-                            try await loginData.checkPhoneNumber()
-                        }
-                    } label: {
-                        Text(L10n.textRegistrationButton)
-                            .frame(maxWidth: .infinity, maxHeight: 44, alignment: .center)
-                            .font(.system(size: 16, weight: .bold))
-                            .foregroundColor(.white)
-                            .background(Color(Asset.blue2.name))
-                            .cornerRadius(8)
-                    }
-                }
-                .padding(insetButton)
-            
+			HStack(spacing: 18) {
+				Button {
+					loginData.authorizationMethodEmail.toggle()
+					loginData.authorizationMethodPhone = false
+				} label: {
+					HStack(spacing: 14) {
+						Image(systemName: loginData.authorizationMethodEmail ? "record.circle" : "circle")
+							.resizable()
+							.frame(width: 18, height: 18)
+							.foregroundColor(loginData.authorizationMethodEmail ? .blue : .gray)
+							.font(.system(size: 30, weight: .bold, design: .default))
+
+						Text(L10n.emailText)
+							.font(.system(size: 14, weight: .regular))
+							.foregroundColor(.black)
+					}
+				}
+
+				Button {
+					loginData.authorizationMethodPhone.toggle()
+					loginData.authorizationMethodEmail = false
+				} label: {
+					HStack(spacing: 14) {
+						Image(systemName: loginData.authorizationMethodPhone ? "record.circle" : "circle")
+							.resizable()
+							.frame(width: 18, height: 18)
+							.foregroundColor(loginData.authorizationMethodPhone ? .blue : .gray)
+							.font(.system(size: 30, weight: .bold, design: .default))
+
+						Text(L10n.phoneText)
+							.font(.system(size: 14, weight: .regular))
+							.foregroundColor(.black)
+					}
+				}
+			}
+			.frame(maxWidth: .infinity, alignment: .leading)
+			.padding([.leading, .top], 20)
+			
+			if loginData.authorizationMethodEmail {
+				EmailMethodRegistration(isAuthorization: $isAuthorization)
+			} else if loginData.authorizationMethodPhone {
+				PhoneMethodRegistration(isAuthorization: $isAuthorization)
+			}
+   
             Spacer()
         }
+		.environmentObject(loginData)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: BackButton())

@@ -75,7 +75,8 @@ struct CodeView: View {
           }
         } label: {
           Text(L10n.textCodeButton)
-            .frame(maxWidth: .infinity, maxHeight: 44, alignment: .center)
+            .frame(maxWidth: .infinity, alignment: .center)
+            .frame(height: 44)
             .font(.system(size: 16, weight: .bold))
             .foregroundColor(.white)
             .background(Color(Asset.blue2.name))

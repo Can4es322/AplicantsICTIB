@@ -44,6 +44,10 @@
 		57EA57862889592700B6CC04 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 57EA57852889592700B6CC04 /* Localizable.strings */; };
 		57EA578A2889731B00B6CC04 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EA57892889731B00B6CC04 /* BackButton.swift */; };
 		57F7CA6F288805C600F02B0B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57F7CA6E288805C600F02B0B /* GoogleService-Info.plist */; };
+		991F5E9928EC3C1500333D29 /* EmailMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F5E9828EC3C1500333D29 /* EmailMethod.swift */; };
+		991F5E9B28EC3D3400333D29 /* PhoneMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F5E9A28EC3D3400333D29 /* PhoneMethod.swift */; };
+		991F5E9E28EC43A400333D29 /* EmailMethodRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F5E9D28EC43A400333D29 /* EmailMethodRegistration.swift */; };
+		991F5EA028EC43BC00333D29 /* PhoneMethodRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F5E9F28EC43BC00333D29 /* PhoneMethodRegistration.swift */; };
 		CE164C78281997D400DDB738 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE164C77281997D400DDB738 /* AuthorizationView.swift */; };
 		CE393ABE280594B6006B6C21 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE393ABD280594B6006B6C21 /* LoginViewModel.swift */; };
 		CE7A7CAF28369FCE00E59F33 /* Events1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A7CAE28369FCE00E59F33 /* Events1.swift */; };
@@ -104,6 +108,10 @@
 		62D91CED996078746107397A /* Pods-ApplicantsIKTIB.release development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicantsIKTIB.release development.xcconfig"; path = "Target Support Files/Pods-ApplicantsIKTIB/Pods-ApplicantsIKTIB.release development.xcconfig"; sourceTree = "<group>"; };
 		727F99BCDA14FF64617E4E1B /* Pods-ApplicantsIKTIB.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicantsIKTIB.debug staging.xcconfig"; path = "Target Support Files/Pods-ApplicantsIKTIB/Pods-ApplicantsIKTIB.debug staging.xcconfig"; sourceTree = "<group>"; };
 		80AE9710C7AEC9937C4DDCCD /* Pods-ApplicantsIKTIB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicantsIKTIB.debug.xcconfig"; path = "Target Support Files/Pods-ApplicantsIKTIB/Pods-ApplicantsIKTIB.debug.xcconfig"; sourceTree = "<group>"; };
+		991F5E9828EC3C1500333D29 /* EmailMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailMethod.swift; sourceTree = "<group>"; };
+		991F5E9A28EC3D3400333D29 /* PhoneMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneMethod.swift; sourceTree = "<group>"; };
+		991F5E9D28EC43A400333D29 /* EmailMethodRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailMethodRegistration.swift; sourceTree = "<group>"; };
+		991F5E9F28EC43BC00333D29 /* PhoneMethodRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneMethodRegistration.swift; sourceTree = "<group>"; };
 		BA83EC3069C7134F47C79F6D /* Pods-ApplicantsIKTIB.debug development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicantsIKTIB.debug development.xcconfig"; path = "Target Support Files/Pods-ApplicantsIKTIB/Pods-ApplicantsIKTIB.debug development.xcconfig"; sourceTree = "<group>"; };
 		CE164C77281997D400DDB738 /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
 		CE393ABD280594B6006B6C21 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -299,10 +307,10 @@
 				5785FA7428AFA52800ECB93B /* LoginGuest */,
 				57CB6709288035E400B20AA5 /* Components */,
 				CED81D6727FAD3280078C62B /* ApplicantsIKTIBApp.swift */,
-				571A29642897DFBB00064371 /* StartView.swift */,
 				CE164C77281997D400DDB738 /* AuthorizationView.swift */,
-				CED81D8027FB055D0078C62B /* AuthorizedLogin */,
+				571A29642897DFBB00064371 /* StartView.swift */,
 				57CB670A2880361000B20AA5 /* Authorization */,
+				CED81D8027FB055D0078C62B /* AuthorizedLogin */,
 				CE0006C4284F5973004FBD33 /* Registration */,
 			);
 			path = "User flows";
@@ -311,6 +319,7 @@
 		57CB6708288035B700B20AA5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				991F5E9C28EC438B00333D29 /* Components */,
 				CE9024CE28357E2100F0AFD8 /* SuccesRegistration.swift */,
 				CE9024C82833F00400F0AFD8 /* AdditinalRegistrationView.swift */,
 				CE9024C3282E467B00F0AFD8 /* CodeView.swift */,
@@ -341,6 +350,7 @@
 		57CB670B2880362D00B20AA5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				991F5E9728EC3BF600333D29 /* Components */,
 				CE7A7CB62836B50B00E59F33 /* CodeViewForEnterToProfile.swift */,
 				CE7A7CB42836AF0E00E59F33 /* RegistrationViewForEnterToProfile.swift */,
 			);
@@ -397,6 +407,24 @@
 				57EA5782288958C500B6CC04 /* Strings.swift */,
 			);
 			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		991F5E9728EC3BF600333D29 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				991F5E9828EC3C1500333D29 /* EmailMethod.swift */,
+				991F5E9A28EC3D3400333D29 /* PhoneMethod.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		991F5E9C28EC438B00333D29 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				991F5E9D28EC43A400333D29 /* EmailMethodRegistration.swift */,
+				991F5E9F28EC43BC00333D29 /* PhoneMethodRegistration.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		B264160922A4CCF0F6C0D601 /* Frameworks */ = {
@@ -635,11 +663,13 @@
 				5785FA7C28AFAB0100ECB93B /* UniversityView.swift in Sources */,
 				CE8DDD642865DA02003FE217 /* TextFieldPersonData.swift in Sources */,
 				57CB671D288583DA00B20AA5 /* TextButton.swift in Sources */,
+				991F5E9E28EC43A400333D29 /* EmailMethodRegistration.swift in Sources */,
 				571A29602892B93B00064371 /* EventTag.swift in Sources */,
 				CE9024CB2834090C00F0AFD8 /* ServerHandler.swift in Sources */,
 				5785FA8A28B500C000ECB93B /* OnboardingPage2View.swift in Sources */,
 				CE9024CF28357E2100F0AFD8 /* SuccesRegistration.swift in Sources */,
 				CE7A7CB72836B50B00E59F33 /* CodeViewForEnterToProfile.swift in Sources */,
+				991F5E9928EC3C1500333D29 /* EmailMethod.swift in Sources */,
 				5785FA7F28B37A6600ECB93B /* News.swift in Sources */,
 				57EA5784288958C500B6CC04 /* Strings.swift in Sources */,
 				571A2953289160C900064371 /* RecordedEventsView.swift in Sources */,
@@ -658,6 +688,7 @@
 				571A295E2892B53500064371 /* EventPostView.swift in Sources */,
 				571A296C2897F75100064371 /* TabSelector.swift in Sources */,
 				CE164C78281997D400DDB738 /* AuthorizationView.swift in Sources */,
+				991F5E9B28EC3D3400333D29 /* PhoneMethod.swift in Sources */,
 				5785FA8128B37E6500ECB93B /* NewsEvent.swift in Sources */,
 				571A295C2892B1B300064371 /* EventsViewModel.swift in Sources */,
 				57DC687E289A9E340043AE71 /* PersonDataView.swift in Sources */,
@@ -666,6 +697,7 @@
 				571A2951289151B300064371 /* ProfileView.swift in Sources */,
 				57DC6880289BE2B90043AE71 /* EditButton.swift in Sources */,
 				CE7A7CB52836AF0E00E59F33 /* RegistrationViewForEnterToProfile.swift in Sources */,
+				991F5EA028EC43BC00333D29 /* PhoneMethodRegistration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

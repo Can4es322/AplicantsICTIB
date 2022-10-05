@@ -62,6 +62,7 @@ internal enum Asset {
   internal static let splashScreen = ImageAsset(name: "splashScreen")
   internal static let authorization = ImageAsset(name: "authorization")
   internal static let back = ImageAsset(name: "back")
+  internal static let eventsEmpty = ImageAsset(name: "eventsEmpty")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

@@ -7,7 +7,7 @@ struct ProfileEventsEttendView: View {
   var body: some View {
     ScrollView(.vertical, showsIndicators: false) {
       VStack {
-        ForEach(server.visitedEvents?.data ?? visitedEvent) {post in
+        ForEach(server.visitedEvents.data) {post in
           CommonEvents(placeHolderEventData: post, isAuthorization: $isAuthorization)
         }
       }

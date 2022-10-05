@@ -8,7 +8,7 @@ struct ProfileData: Decodable {
   var id: Int
   var image: String?
   var lastName: String
-  var phoneNumber: String
+  var phoneNumber: String?
   var updatedAt: String
   var school: String
   var city: String

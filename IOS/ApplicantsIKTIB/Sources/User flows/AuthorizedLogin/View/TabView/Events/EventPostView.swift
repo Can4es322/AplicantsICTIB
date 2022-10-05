@@ -16,11 +16,12 @@ struct EventPostView: View {
             image
               .resizable()
               .scaledToFill()
-              .frame(width: 335, height: 286, alignment: .center)
-              .cornerRadius(10)
+              .frame(height: 286, alignment: .center)
+			  .frame(minWidth: 0, maxWidth: .infinity)
+			  .cornerRadius(10)
           }placeholder: {
             ProgressView()
-              .frame(width: 335, height: 286, alignment: .center)
+              .frame(height: 286, alignment: .center)
           }
           .padding([.top, .bottom], 16)
         }
@@ -218,7 +219,7 @@ struct EventPostView: View {
         }
       }
       .frame(maxWidth: .infinity, alignment: .leading)
-      .padding(.horizontal, 15)
+	  .padding(.horizontal, 15)
       .navigationTitle(placeHolderEventData.title)
       .navigationBarTitleDisplayMode(.inline)
       .navigationBarBackButtonHidden(true)

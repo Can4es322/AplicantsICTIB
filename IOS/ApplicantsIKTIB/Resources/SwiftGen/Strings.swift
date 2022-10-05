@@ -50,14 +50,22 @@ internal enum L10n {
   internal static let confirmEvents = L10n.tr("Localizable", "confirmEvents")
   /// Персональные данные
   internal static let dataPerson = L10n.tr("Localizable", "dataPerson")
+  /// Почта
+  internal static let emailText = L10n.tr("Localizable", "emailText")
   /// Конец: 
   internal static let endEvents = L10n.tr("Localizable", "endEvents")
   /// Введите одноразовый код
   internal static let enterCode = L10n.tr("Localizable", "enterCode")
   /// Войти как гость
   internal static let enterGuest = L10n.tr("Localizable", "enterGuest")
+  /// Почта введена не корректно
+  internal static let errorEmailIsNil = L10n.tr("Localizable", "errorEmailIsNil")
   /// Проверьте правильность указанного номера
   internal static let errorText = L10n.tr("Localizable", "errorText")
+  /// Данная почта не зарегестрирована
+  internal static let errorTextEmail = L10n.tr("Localizable", "errorTextEmail")
+  /// Данная почта уже существует
+  internal static let errorTextEmailRegitration = L10n.tr("Localizable", "errorTextEmailRegitration")
   /// Детали
   internal static let eventPostTitle = L10n.tr("Localizable", "eventPostTitle")
   /// Я пойду
@@ -85,7 +93,7 @@ internal enum L10n {
   /// После ввода номера телефона,
   /// вам придет одноразовый код.
   internal static let infoTextCode = L10n.tr("Localizable", "infoTextCode")
-  /// ВАШ НОМЕР ТЕЛЕФОНА
+  /// Ваш номер телефона
   internal static let infoTextField = L10n.tr("Localizable", "infoTextField")
   /// Укажите ваш номер телефона
   internal static let infoTextNumberPhone = L10n.tr("Localizable", "infoTextNumberPhone")
@@ -101,8 +109,22 @@ internal enum L10n {
   internal static let nameTextField = L10n.tr("Localizable", "nameTextField")
   /// Хочу подарок
   internal static let onBoarding3 = L10n.tr("Localizable", "onBoarding3")
-  /// Институт компьютерных технологий и информационной безопасности является ведущим Институтом Юга России, осуществляющим подготовку кадров в сфере IT
+  /// Институт компьютерных технологий и информационной безопасности является ведущим Институтом Юга России
   internal static let onboardingDescription = L10n.tr("Localizable", "onboardingDescription")
+  /// Телефон
+  internal static let phoneText = L10n.tr("Localizable", "phoneText")
+  /// Вход по почте
+  internal static let phoneTextAuthorization = L10n.tr("Localizable", "phoneTextAuthorization")
+  /// После ввода почты и пароля вы попадете в приложение
+  internal static let phoneTextAuthorizationDescription = L10n.tr("Localizable", "phoneTextAuthorizationDescription")
+  /// Укажите вашу почту
+  internal static let phoneTextAuthorizationEmail = L10n.tr("Localizable", "phoneTextAuthorizationEmail")
+  /// На введенную почту придет сообщение для продолжения регистрации
+  internal static let phoneTextAuthorizationEmailDescription = L10n.tr("Localizable", "phoneTextAuthorizationEmailDescription")
+  /// Ваша почта
+  internal static let phoneTextFieldEmail = L10n.tr("Localizable", "phoneTextFieldEmail")
+  /// Пароль
+  internal static let phoneTextFieldPassword = L10n.tr("Localizable", "phoneTextFieldPassword")
   /// Продолжая пользоваться приложением,
   ///  Вы соглашаетесь с Политикой конфиденциальности и даете согласие на Обработку Ваших Данных.
   internal static let politicalInfo = L10n.tr("Localizable", "politicalInfo")
@@ -156,6 +178,9 @@ internal enum L10n {
   internal static let textAuthorizationButton = L10n.tr("Localizable", "textAuthorizationButton")
   /// Продолжить
   internal static let textCodeButton = L10n.tr("Localizable", "textCodeButton")
+  /// Новые мероприятия
+  /// на подходе!
+  internal static let textEventsEmpty = L10n.tr("Localizable", "textEventsEmpty")
   /// На номер 
   internal static let textPart1 = L10n.tr("Localizable", "textPart1")
   /// был отправлен код для входа в приложение

@@ -9,13 +9,20 @@
 // RegistrationView.swift
 "infoTextNumberPhone" = "Укажите ваш номер телефона";
 "infoTextCode" = "После ввода номера телефона,\nвам придет одноразовый код.";
-"infoTextField" = "ВАШ НОМЕР ТЕЛЕФОНА";
+"infoTextField" = "Ваш номер телефона";
 "errorText" = "Проверьте правильность указанного номера";
 "textRegistrationButton" = "Зарегистрироваться";
 
 // RegistrationViewForEnterToProfile.swift
 "textAuthorizationButton" = "Продолжить";
-
+"emailText" = "Почта";
+"phoneText" = "Телефон";
+"phoneTextAuthorization" = "Вход по почте";
+"phoneTextAuthorizationDescription" = "После ввода почты и пароля вы попадете в приложение";
+"phoneTextFieldEmail" = "Ваша почта";
+"phoneTextFieldPassword" = "Пароль";
+"phoneTextAuthorizationEmail" = "Укажите вашу почту";
+"phoneTextAuthorizationEmailDescription" = "На введенную почту придет сообщение для продолжения регистрации";
 
 // CodeView.swift
 "enterCode" = "Введите одноразовый код";
@@ -77,7 +84,7 @@
 "universityIKTIB" = "ИКТИБ";
 "university" = "ЮФУ";
 "fullNameUniversity" = "Институт компьютерных технологий и информационной безопастности";
-"onboardingDescription" = "Институт компьютерных технологий и информационной безопасности является ведущим Институтом Юга России, осуществляющим подготовку кадров в сфере IT";
+"onboardingDescription" = "Институт компьютерных технологий и информационной безопасности является ведущим Институтом Юга России";
 "taskDescription" = "Ходи на мероприятия и получай баллы";
 "bonusesDescription" = "Обменивай баллы на подарки!";
 "onBoarding3" = "Хочу подарок";
@@ -99,3 +106,8 @@
 "succesConfirmEvents" = "Вы отмечены на мероприятии!";
 "bottomSheet" = "Класс";
 "anonymousPerson" = "Зарегестрируйтесь чтобы записаться";
+
+"errorTextEmail" = "Данная почта не зарегестрирована";
+"errorEmailIsNil" = "Почта введена не корректно";
+"errorTextEmailRegitration" = "Данная почта уже существует";
+"textEventsEmpty" = "Новые мероприятия\nна подходе!";
